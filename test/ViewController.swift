@@ -7,12 +7,14 @@
 //
 
 import Cocoa
+import CoreBluetooth
 
 class ViewController: NSViewController {
-
+    var cbManager:BTManager!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        cbManager = BTManager()
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +23,6 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
 
 }
 
