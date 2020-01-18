@@ -18,6 +18,15 @@ class BTManager: NSObject, CBPeripheralManagerDelegate {
     }
     
     func setup() {
+        addHIDService()
+        addDeviceInfoService()
+        addBatteryService()
+        
+        let advertisementData = [CBAdvertisementDataServiceUUIDsKey: [Const.HIDService.Service.UUID,Const.BatteryService.Service.UUID,Const.DeviceInfomationService.Service.UUID],CBAdvertisementDataLocalNameKey: "testKeybard"] as [String : Any]
+        peripheral.startAdvertising(advertisementData)
+    }
+    
+    func addHIDService(){
         let  service = CBMutableService(type: CBUUID(string: Const.HIDService.Service.UUID), primary: true)
         let characteristicUUID = CBUUID(string: Const.HIDService.Characteristic.bootKeyboardInputReport)
         let properties: CBCharacteristicProperties = [.notify, .read, .write]
@@ -27,9 +36,30 @@ class BTManager: NSObject, CBPeripheralManagerDelegate {
         service.characteristics = [characteristic]
         
         peripheral.add(service)
+    }
+    
+    func addDeviceInfoService(){
+        let  service = CBMutableService(type: CBUUID(string: Const.DeviceInfomationService.Service.UUID), primary: true)
+        let characteristicUUID = CBUUID(string: Const.DeviceInfomationService.Characteristic.manufaturerName)
+        let properties: CBCharacteristicProperties = [.notify, .read, .write]
+        let permissions: CBAttributePermissions = [.readable, .writeable]
+        let characteristic = CBMutableCharacteristic(type: characteristicUUID, properties: properties,
+                                                     value: nil, permissions: permissions)
+        service.characteristics = [characteristic]
         
-        let advertisementData = [CBAdvertisementDataServiceUUIDsKey: [service.uuid],CBAdvertisementDataLocalNameKey: "testKeybard"] as [String : Any]
-        peripheral.startAdvertising(advertisementData)
+        peripheral.add(service)
+    }
+    
+    func addBatteryService(){
+        let  service = CBMutableService(type: CBUUID(string: Const.BatteryService.Service.UUID), primary: true)
+        let characteristicUUID = CBUUID(string: Const.BatteryService.Characteristic.batteryLevel)
+        let properties: CBCharacteristicProperties = [.notify, .read, .write]
+        let permissions: CBAttributePermissions = [.readable, .writeable]
+        let characteristic = CBMutableCharacteristic(type: characteristicUUID, properties: properties,
+                                                     value: nil, permissions: permissions)
+        service.characteristics = [characteristic]
+        
+        peripheral.add(service)
     }
     
     func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
@@ -47,5 +77,17 @@ class BTManager: NSObject, CBPeripheralManagerDelegate {
             return
         }
         print("OK")
+    }
+    
+    func peripheralManager(_ peripheral: CBPeripheralManager, didOpen channel: CBL2CAPChannel?, error: Error?) {
+        print(error)
+    }
+    
+    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
+        print(request)
+    }
+    
+    func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
+        print(requests)
     }
 }

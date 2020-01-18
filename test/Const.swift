@@ -17,8 +17,15 @@ struct Const {
         
         /// サービスのキャラクタリスティックのUUID
         struct Characteristic {
-            static let kUUID01 = "0000XXXX-0000-1000-8000-00805f9b34fb"
-            static let kUUID02 = "0000XXXX-0000-1000-8000-00805f9b34fb"
+            static let manufaturerName = "00002a29-0000-1000-8000-00805f9b34fb"
+            static let modelNumber = "00002a24-0000-1000-8000-00805f9b34fb"
+            static let serialNumber = "00002a25-0000-1000-8000-00805f9b34fb"
+            static let hardwareRevision = "00002a27-0000-1000-8000-00805f9b34fb"
+            static let firmwareRevision = "00002a26-0000-1000-8000-00805f9b34fb"
+            static let softwareRevision = "00002a28-0000-1000-8000-00805f9b34fb"
+            static let systemID = "00002a23-0000-1000-8000-00805f9b34fb"
+            static let regulatoryData = "00002a2a-0000-1000-8000-00805f9b34fb"
+            static let pnpID = "00002a50-0000-1000-8000-00805f9b34fb"
         }
         
         static let kPeripheralName = "Hoge Bluetooth"
@@ -31,8 +38,7 @@ struct Const {
         
         /// サービスのキャラクタリスティックのUUID
         struct Characteristic {
-            static let kUUID01 = "cd100001-1234-1234-1234-hogehogehoge"
-            static let kUUID02 = "cd100002-1234-1234-1234-hogehogehoge"
+            static let batteryLevel = "00002a19-0000-1000-8000-00805f9b34fb"
         }
         
         static let kPeripheralName = "Hoge Bluetooth"
