@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA311C6123D383C500FB1C0D /* BTCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA311C6023D383C500FB1C0D /* BTCentralManager.swift */; };
 		AAE6054623CF708F00DB143D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6054523CF708F00DB143D /* AppDelegate.swift */; };
 		AAE6054823CF708F00DB143D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6054723CF708F00DB143D /* ViewController.swift */; };
 		AAE6054A23CF709000DB143D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE6054923CF709000DB143D /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA311C6023D383C500FB1C0D /* BTCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTCentralManager.swift; sourceTree = "<group>"; };
 		AAE6054223CF708F00DB143D /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE6054523CF708F00DB143D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE6054723CF708F00DB143D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				AAE6057123CF727300DB143D /* Const.swift */,
 				AAE6054723CF708F00DB143D /* ViewController.swift */,
 				AAE6057323CF7A3100DB143D /* BTmanager.swift */,
+				AA311C6023D383C500FB1C0D /* BTCentralManager.swift */,
 				AAE6054923CF709000DB143D /* Assets.xcassets */,
 				AAE6054B23CF709000DB143D /* Main.storyboard */,
 				AAE6054E23CF709000DB143D /* Info.plist */,
@@ -262,6 +265,7 @@
 			files = (
 				AAE6054823CF708F00DB143D /* ViewController.swift in Sources */,
 				AAE6054623CF708F00DB143D /* AppDelegate.swift in Sources */,
+				AA311C6123D383C500FB1C0D /* BTCentralManager.swift in Sources */,
 				AAE6057223CF727300DB143D /* Const.swift in Sources */,
 				AAE6057423CF7A3100DB143D /* BTmanager.swift in Sources */,
 			);

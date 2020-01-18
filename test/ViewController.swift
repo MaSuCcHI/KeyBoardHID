@@ -10,11 +10,11 @@ import Cocoa
 import CoreBluetooth
 
 class ViewController: NSViewController {
-    var cbManager:BTManager!
+    var cbManager:BTcentralManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cbManager = BTManager()
+        cbManager = BTcentralManager()
         // Do any additional setup after loading the view.
     }
 
