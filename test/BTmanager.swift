@@ -11,6 +11,7 @@ import CoreBluetooth
 
 class BTManager: NSObject, CBPeripheralManagerDelegate {
     let peripheral: CBPeripheralManager!
+    var timer = Timer()
     override init() {
         peripheral = CBPeripheralManager(delegate: nil, queue: nil)
         super.init()
@@ -81,6 +82,11 @@ class BTManager: NSObject, CBPeripheralManagerDelegate {
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didOpen channel: CBL2CAPChannel?, error: Error?) {
         print(error)
+        //HIDreportの書き込み処理を入れる
+        timer = Timer.scheduledTimer(withTimeInterval: 0.020,
+                                     repeats: true, block: { (timer) in
+//              peripheral.updateValue(<#T##value: Data##Data#>, for: <#T##CBMutableCharacteristic#>, onSubscribedCentrals: <#T##[CBCentral]?#>)
+                                    })
     }
     
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveRead request: CBATTRequest) {
@@ -90,4 +96,5 @@ class BTManager: NSObject, CBPeripheralManagerDelegate {
     func peripheralManager(_ peripheral: CBPeripheralManager, didReceiveWrite requests: [CBATTRequest]) {
         print(requests)
     }
+    
 }
