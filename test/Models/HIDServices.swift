@@ -9,20 +9,78 @@
 import Foundation
 import CoreBluetooth
 
-struct HIDServices {
-    func getService() -> CBMutableService {
-        return CBMutableService(type: CBUUID(string: Const.HIDService.Service.UUID),
-                                primary: true)
+class HIDServices {
+    open func getService() -> CBMutableService {
+        let service = CBMutableService(type: CBUUID(string: Const.HIDService.Service.UUID),
+                                       primary: true)
+        setCharacteristics(service: service)
+        return service
     }
     
-    func setCharacteristics(service:CBMutableService) {
-        let uuid = CBUUID(string: Const.HIDService.Characteristic.ProtocolMode.uuid)
-        let properties = Const.HIDService.Characteristic.ProtocolMode.requirement
+    private func setCharacteristics(service:CBMutableService) {
+        //ProtocolMode
+        var uuid = CBUUID(string: Const.HIDService.Characteristics.ProtocolMode.uuid)
+        var properties = Const.HIDService.Characteristics.ProtocolMode.requirement
         let permissions: CBAttributePermissions = [.readable, .writeable]
-        let characteristic = CBMutableCharacteristic(type: uuid,
+        var characteristic = CBMutableCharacteristic(type: uuid,
                                                      properties: properties,
                                                      value: nil,
                                                      permissions: permissions)
+        service.characteristics = [characteristic]
+        
+        //Report
+        uuid = CBUUID(string: Const.HIDService.Characteristics.Report.uuid)
+        properties = Const.HIDService.Characteristics.Report.requirement
+        characteristic = CBMutableCharacteristic(type: uuid,
+                                                 properties: properties,
+                                                 value: nil,
+                                                 permissions: permissions)
+        service.characteristics?.append(characteristic)
+        
+        //ReportMap
+        uuid = CBUUID(string: Const.HIDService.Characteristics.ReportMap.uuid)
+        properties = Const.HIDService.Characteristics.ReportMap.requirement
+        characteristic = CBMutableCharacteristic(type: uuid,
+                                                 properties: properties,
+                                                 value: nil,
+                                                 permissions: permissions)
+        service.characteristics?.append(characteristic)
+        
+        //BootkeyboardInput
+        uuid = CBUUID(string: Const.HIDService.Characteristics.BootKeyboardInputReport.uuid)
+        properties = Const.HIDService.Characteristics.BootKeyboardInputReport.requirement
+        characteristic = CBMutableCharacteristic(type: uuid,
+                                                 properties: properties,
+                                                 value: nil,
+                                                 permissions: permissions)
+        service.characteristics?.append(characteristic)
+        
+        
+        //BootkeyboardOUtput
+        uuid = CBUUID(string: Const.HIDService.Characteristics.BootKeyboardOutputReport.uuid)
+        properties = Const.HIDService.Characteristics.BootKeyboardOutputReport.requirement
+        characteristic = CBMutableCharacteristic(type: uuid,
+                                                 properties: properties,
+                                                 value: nil,
+                                                 permissions: permissions)
+        service.characteristics?.append(characteristic)
+        
+        //HIDInfomation
+        uuid = CBUUID(string: Const.HIDService.Characteristics.HIDInfomation.uuid)
+        properties = Const.HIDService.Characteristics.HIDInfomation.requirement
+        characteristic = CBMutableCharacteristic(type: uuid,
+                                                 properties: properties,
+                                                 value: nil,
+                                                 permissions: permissions)
+        service.characteristics?.append(characteristic)
+        
+        //HIDControlPoint
+        uuid = CBUUID(string: Const.HIDService.Characteristics.HIDControlPoint.uuid)
+        properties = Const.HIDService.Characteristics.HIDControlPoint.requirement
+        characteristic = CBMutableCharacteristic(type: uuid,
+                                                 properties: properties,
+                                                 value: nil,
+                                                 permissions: permissions)
         service.characteristics?.append(characteristic)
     }
 }

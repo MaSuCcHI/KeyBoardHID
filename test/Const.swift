@@ -52,6 +52,7 @@ struct Const {
 
         /// サービスのキャラクタリスティックのUUID
         struct Characteristics {
+            
             struct ProtocolMode {
                 static let uuid: String = "00002a4e-0000-1000-8000-00805f9b34fb"
                 static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse]
