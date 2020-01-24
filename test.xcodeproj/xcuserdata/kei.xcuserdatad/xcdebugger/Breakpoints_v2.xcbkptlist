@@ -17,7 +17,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
             endingLineNumber = "87"
-            landmarkName = "peripheralManager(_:didReceiveRead:)"
+            landmarkName = "peripheralManager(_:didOpen:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -34,7 +34,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "peripheralManager(_:didReceiveWrite:)"
+            landmarkName = "peripheralManager(_:didOpen:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

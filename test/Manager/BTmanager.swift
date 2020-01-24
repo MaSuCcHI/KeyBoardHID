@@ -29,6 +29,8 @@ class BTManager: NSObject, CBPeripheralManagerDelegate {
     
     func addHIDService(){
         let  service = CBMutableService(type: CBUUID(string: Const.HIDService.Service.UUID), primary: true)
+        
+        
         let characteristicUUID = CBUUID(string: Const.HIDService.Characteristic.bootKeyboardInputReport)
         let properties: CBCharacteristicProperties = [.notify, .read]
         let permissions: CBAttributePermissions = [.readable, .writeable]

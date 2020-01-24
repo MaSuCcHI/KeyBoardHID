@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreBluetooth
 
 struct Const {
     //base 0000XXXX-0000-1000-8000-00805f9b34fb
@@ -48,16 +49,49 @@ struct Const {
         struct Service {
             static let UUID: String = "00001812-0000-1000-8000-00805F9B34FB"
         }
-        
+
         /// サービスのキャラクタリスティックのUUID
-        struct Characteristic {
-            static let protocolMode = "00002a4e-0000-1000-8000-00805f9b34fb"
-            static let report =  "00002a4d-0000-1000-8000-00805f9b34fb"
-            static let reportMap = "00002a4b-0000-1000-8000-00805f9b34fb"
-            static let bootKeyboardInputReport = "00002a22-0000-1000-8000-00805f9b34fb"
-            static let bootKeyboartOutputReport = "00002a32-0000-1000-8000-00805f9b34fb"
-            static let HIDinfo = "00002a4a-0000-1000-8000-00805f9b34fb"
-            static let HIDcontrolPoint = "00002a4c-0000-1000-8000-00805f9b34fb"
+        struct Characteristics {
+            struct ProtocolMode {
+                static let uuid: String = "00002a4e-0000-1000-8000-00805f9b34fb"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse]
+            }
+            struct Report {
+                static let uuid = "00002a4d-0000-1000-8000-00805f9b34fb"
+                static let requirement: CBCharacteristicProperties = [.read,.write,.writeWithoutResponse]
+                struct input {
+                    static let requirement: CBCharacteristicProperties = [.read,.notify]
+                }
+                struct output {
+                    static let requirement: CBCharacteristicProperties = [.read,.write,.writeWithoutResponse]
+                }
+                struct feature {
+                    static let requirement: CBCharacteristicProperties = [.read,.write]
+                }
+            }
+            
+            struct ReportMap {
+                static let uuid = "00002a4b-0000-1000-8000-00805f9b34fb"
+                static let requirement: CBCharacteristicProperties = [.read]
+            }
+            
+            struct BootKeyboardInputReport {
+                static let uuid = "00002a22-0000-1000-8000-00805f9b34fb"
+                static let requirement: CBCharacteristicProperties = [.read,.notify]
+            }
+            struct BootKeyboardOutputReport {
+                static let uuid = "00002a32-0000-1000-8000-00805f9b34fb"
+                static let requirement: CBCharacteristicProperties = [.read,.write,.writeWithoutResponse]
+            }
+            
+            struct HIDInfomation {
+                static let uuid = "00002a4a-0000-1000-8000-00805f9b34fb"
+                static let requirement: CBCharacteristicProperties = [.read]
+            }
+            struct HIDControlPoint {
+                static let uuid = "00002a4c-0000-1000-8000-00805f9b34fb"
+                static let requirement: CBCharacteristicProperties = [.writeWithoutResponse]
+            }
         }
         
         struct ReportID {
