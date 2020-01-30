@@ -32,7 +32,11 @@ class BTcentralManager:NSObject, CBCentralManagerDelegate {
     }
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
-        print(advertisementData)
+        if peripheral.name == "ff-ff-ff-ff-ff-ff" {
+            print(peripheral)
+            print(advertisementData)
+        }
+       
     }
     
 }
