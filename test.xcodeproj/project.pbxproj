@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AA311C6123D383C500FB1C0D /* BTCentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA311C6023D383C500FB1C0D /* BTCentralManager.swift */; };
+		AA3FBFDD23DCDE9D0078CAC9 /* InfomationServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3FBFDC23DCDE9D0078CAC9 /* InfomationServices.swift */; };
+		AA3FBFF423E00BBC0078CAC9 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = AA3FBFF323E00BBC0078CAC9 /* README.md */; };
 		AAE6054623CF708F00DB143D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6054523CF708F00DB143D /* AppDelegate.swift */; };
 		AAE6054823CF708F00DB143D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE6054723CF708F00DB143D /* ViewController.swift */; };
 		AAE6054A23CF709000DB143D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAE6054923CF709000DB143D /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		AA311C6023D383C500FB1C0D /* BTCentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTCentralManager.swift; sourceTree = "<group>"; };
+		AA3FBFDC23DCDE9D0078CAC9 /* InfomationServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfomationServices.swift; sourceTree = "<group>"; };
+		AA3FBFF323E00BBC0078CAC9 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AAE6054223CF708F00DB143D /* test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAE6054523CF708F00DB143D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AAE6054723CF708F00DB143D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +88,7 @@
 		AAE6053923CF708F00DB143D = {
 			isa = PBXGroup;
 			children = (
+				AA3FBFF323E00BBC0078CAC9 /* README.md */,
 				AAE6054423CF708F00DB143D /* test */,
 				AAE6055723CF709000DB143D /* testTests */,
 				AAE6056223CF709000DB143D /* testUITests */,
@@ -140,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				AAE6057523DB571000DB143D /* HIDServices.swift */,
+				AA3FBFDC23DCDE9D0078CAC9 /* InfomationServices.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA3FBFF423E00BBC0078CAC9 /* README.md in Resources */,
 				AAE6054A23CF709000DB143D /* Assets.xcassets in Resources */,
 				AAE6054D23CF709000DB143D /* Main.storyboard in Resources */,
 			);
@@ -294,6 +301,7 @@
 				AAE6057623DB571000DB143D /* HIDServices.swift in Sources */,
 				AAE6054623CF708F00DB143D /* AppDelegate.swift in Sources */,
 				AA311C6123D383C500FB1C0D /* BTCentralManager.swift in Sources */,
+				AA3FBFDD23DCDE9D0078CAC9 /* InfomationServices.swift in Sources */,
 				AAE6057223CF727300DB143D /* Const.swift in Sources */,
 				AAE6057423CF7A3100DB143D /* BTmanager.swift in Sources */,
 			);

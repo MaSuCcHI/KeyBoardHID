@@ -10,23 +10,51 @@ import Foundation
 import CoreBluetooth
 
 struct Const {
-    //base 0000XXXX-0000-1000-8000-00805f9b34fb
+    //base XXXX
     struct DeviceInfomationService {
         struct Service {
-            static let UUID: String = "0000180A-0000-1000-8000-00805f9b34fb"
+            static let UUID: String = "180A"
         }
         
         /// サービスのキャラクタリスティックのUUID
-        struct Characteristic {
-            static let manufaturerName = "00002a29-0000-1000-8000-00805f9b34fb"
-            static let modelNumber = "00002a24-0000-1000-8000-00805f9b34fb"
-            static let serialNumber = "00002a25-0000-1000-8000-00805f9b34fb"
-            static let hardwareRevision = "00002a27-0000-1000-8000-00805f9b34fb"
-            static let firmwareRevision = "00002a26-0000-1000-8000-00805f9b34fb"
-            static let softwareRevision = "00002a28-0000-1000-8000-00805f9b34fb"
-            static let systemID = "00002a23-0000-1000-8000-00805f9b34fb"
-            static let regulatoryData = "00002a2a-0000-1000-8000-00805f9b34fb"
-            static let pnpID = "00002a50-0000-1000-8000-00805f9b34fb"
+        struct Characteristics {
+            struct  ManufaturerName {
+                static let uuid = "2a29"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            
+            struct ModelNumber {
+                static let uuid = "2a24"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            struct SerialNumber {
+                static let uuid = "2a25"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            struct HardwaewRevision {
+                static let uuid = "2a27"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            struct FirmwareRevision {
+                static let uuid = "2a26"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            struct SoftwareRevision {
+                static let uuid = "2a28"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            struct SystemID {
+                static let uuid = "2a23"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            struct RgulatorDate {
+                static let uuid = "2a2a"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            struct PnpID {
+                static let uuid = "2a50"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
         }
         
         static let kPeripheralName = "Hoge Bluetooth"
@@ -34,12 +62,16 @@ struct Const {
     
     struct BatteryService {
         struct Service {
-            static let UUID: String = "0000180F-0000-1000-8000-00805f9b34fb"
+            static let UUID: String = "180F"
         }
         
         /// サービスのキャラクタリスティックのUUID
-        struct Characteristic {
-            static let batteryLevel = "00002a19-0000-1000-8000-00805f9b34fb"
+        struct Characteristics {
+            struct BatteryLevel {
+                static let uuid = "2a19"
+                static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse,.write]
+            }
+            
         }
         
         static let kPeripheralName = "Hoge Bluetooth"
@@ -47,18 +79,18 @@ struct Const {
     
     struct HIDService {
         struct Service {
-            static let UUID: String = "00001812-0000-1000-8000-00805F9B34FB"
+            static let UUID: String = "1812"
         }
 
         /// サービスのキャラクタリスティックのUUID
         struct Characteristics {
             
             struct ProtocolMode {
-                static let uuid: String = "00002a4e-0000-1000-8000-00805f9b34fb"
+                static let uuid: String = "2a4e"
                 static let requirement: CBCharacteristicProperties = [.read,.writeWithoutResponse]
             }
             struct Report {
-                static let uuid = "00002a4d-0000-1000-8000-00805f9b34fb"
+                static let uuid = "2a4d"
                 static let requirement: CBCharacteristicProperties = [.read,.write,.writeWithoutResponse]
                 struct input {
                     static let requirement: CBCharacteristicProperties = [.read,.notify]
@@ -72,25 +104,25 @@ struct Const {
             }
             
             struct ReportMap {
-                static let uuid = "00002a4b-0000-1000-8000-00805f9b34fb"
+                static let uuid = "2a4b"
                 static let requirement: CBCharacteristicProperties = [.read]
             }
             
             struct BootKeyboardInputReport {
-                static let uuid = "00002a22-0000-1000-8000-00805f9b34fb"
+                static let uuid = "2a22"
                 static let requirement: CBCharacteristicProperties = [.read,.notify]
             }
             struct BootKeyboardOutputReport {
-                static let uuid = "00002a32-0000-1000-8000-00805f9b34fb"
+                static let uuid = "2a32"
                 static let requirement: CBCharacteristicProperties = [.read,.write,.writeWithoutResponse]
             }
             
             struct HIDInfomation {
-                static let uuid = "00002a4a-0000-1000-8000-00805f9b34fb"
+                static let uuid = "2a4a"
                 static let requirement: CBCharacteristicProperties = [.read]
             }
             struct HIDControlPoint {
-                static let uuid = "00002a4c-0000-1000-8000-00805f9b34fb"
+                static let uuid = "2a4c"
                 static let requirement: CBCharacteristicProperties = [.writeWithoutResponse]
             }
         }
@@ -100,9 +132,9 @@ struct Const {
             static let mouse = 0x02
         }
         
-//        static let header = { USAGE_PAGE(1),      0x01}
+        //        static let header = { USAGE_PAGE(1),      0x01}
         
         static let kPeripheralName = "Hoge Bluetooth"
-    
+        
     }
 }
